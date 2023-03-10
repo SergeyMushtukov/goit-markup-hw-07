@@ -1,0 +1,17 @@
+@media screen and (min-width: 480px) {
+  .container {
+    width: 428px;
+  }
+
+  /* --------HERO-------- */
+
+  .hero-title {
+    font-size: 36px;
+  }
+
+  /* --------MODAL-------- */
+
+  .modal {
+    width: 392px;
+  }
+}
