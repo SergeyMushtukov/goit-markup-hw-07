@@ -3,7 +3,17 @@
     padding-top: 16px;
     padding-bottom: 15px;
   }
+
+  .customers .container {
+    width: calc(552px + 2 * 16px);
+  }
+
+  .footer .container {
+    width: calc(552px + 2 * 15px);
+  }
 }
+
+/* ---------------- */
 
 @media screen and (min-width: 768px) {
   .container {
@@ -18,13 +28,12 @@
     align-items: center;
   }
 
-  .header-navigation {
-    display: flex;
-    align-items: center;
-  }
-
   .header-logo {
     margin-right: 120px;
+  }
+
+  .menu-toggle {
+    display: none;
   }
 
   .header-list {
@@ -101,6 +110,12 @@
     color: var(--hover-bg-color);
   }
 
+  /* --------MOBILE-MENU-------- */
+
+  .mobile-menu {
+    display: none;
+  }
+
   /* --------HERO-------- */
 
   .hero-title {
@@ -109,12 +124,44 @@
     line-height: calc(60 / 56);
   }
 
+  .overlay {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url('../images/people-office-desktop.jpg');
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .overlay {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url('../images/people-office-desktop@2x.jpg');
+    }
+  }
+
   /* --------MODAL-------- */
 
   .modal {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+
     width: 408px;
     padding-left: 24px;
     padding-right: 24px;
+
+    transition: transform var(--time) var(--timing-function);
+  }
+
+  .backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(1.1);
   }
 
   /* --------OUR ADVANTAGES-------- */
@@ -158,10 +205,6 @@
 
   /* --------Customers-------- */
 
-  .customers .container {
-    width: calc(552px + 2 * 16px);
-  }
-
   .customer-list {
     column-gap: 24px;
   }
@@ -171,10 +214,6 @@
   }
 
   /* --------FOOTER-------- */
-
-  .footer .container {
-    width: calc(552px + 2 * 15px);
-  }
 
   .footer-base {
     display: flex;
@@ -217,4 +256,22 @@
     margin-left: 0;
     margin-right: 0;
   }
+
+    /* -------------PORTFOLIO PAGE------------- */
+
+    .examples.section {
+      padding-top: 64px;
+      padding-bottom: 96px;
+    }
+
+    .examples-btn-list {
+      justify-content: center;
+      margin-bottom: 64px;
+    }
+
+    .examples-list {
+      row-gap: 72px;
+      column-gap: 16px;
+    }
+
 }

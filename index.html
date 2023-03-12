@@ -27,6 +27,16 @@
           <a href="./index.html" class="logo header-logo link"
             ><span class="accent">Web</span>Studio</a
           >
+          <button
+            type="button"
+            class="menu-toggle js-open-menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+            <svg width="32" height="22" class="open-menu-icon">
+              <use href="./images/icons.svg#menu-hamburger"></use>
+            </svg>
+          </button>
           <ul class="header-list list">
             <li class="header-item">
               <a href="./index.html" class="header-link link active">Studio</a>
@@ -53,6 +63,72 @@
             </li>
           </ul>
         </address>
+      </div>
+      <div class="mobile-menu js-menu-container" id="mobile-menu">
+        <button type="button" class="mobile-menu-btn js-close-menu">
+          <svg class="close-menu-icon" width="8" height="8">
+            <use href="./images/icons.svg#close-black"></use>
+          </svg>
+        </button>
+        <nav class="mobile-navigation">
+          <ul class="mobile-list list">
+            <li class="mobile-item">
+              <a href="./index.html" class="mobile-link link active">Studio</a>
+            </li>
+            <li class="mobile-item">
+              <a href="./portfolio.html" class="mobile-link link">Portfolio</a>
+            </li>
+            <li class="mobile-item">
+              <a href="" class="mobile-link link">Contacts</a>
+            </li>
+          </ul>
+        </nav>
+        <div>
+          <address class="mobile-address">
+            <ul class="mobile-address-list list">
+              <li>
+                <a href="tel:+110001111111" class="mobile-tel link"
+                  >+11 (000) 111-11-11</a
+                >
+              </li>
+              <li class="mobile-address-item">
+                <a href="mailto:info@devstudio.com" class="mobile-mail link"
+                  >info@devstudio.com</a
+                >
+              </li>
+            </ul>
+          </address>
+          <ul class="mobile-soc-list list">
+            <li class="mobile-soc-item">
+              <a class="mobile-soc-link link" href="">
+                <svg class="mobile-soc-icon" width="24" height="24">
+                  <use href="./images/icons.svg#instagram"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="mobile-soc-item">
+              <a class="mobile-soc-link link" href="">
+                <svg class="mobile-soc-icon" width="24" height="24">
+                  <use href="./images/icons.svg#twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="mobile-soc-item">
+              <a class="mobile-soc-link link" href="">
+                <svg class="mobile-soc-icon" width="24" height="24">
+                  <use href="./images/icons.svg#facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="mobile-soc-item">
+              <a class="mobile-soc-link link" href="">
+                <svg class="mobile-soc-icon" width="24" height="24">
+                  <use href="./images/icons.svg#linkedin"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </header>
     <main>
@@ -189,13 +265,24 @@
           <h2 class="case-title">What are we doing</h2>
           <ul class="case-list list">
             <li class="case-item">
-              <img src="./images/img-1.jpg" alt="Apple iMak" width="360" />
-            </li>
-            <li class="case-item">
-              <img src="./images/img-2.jpg" alt="Apple iphone" width="360" />
+              <img
+                srcset="./images/img-1.jpg 1x, ./images/img-1@2x.jpg 2x"
+                src="./images/img-1.jpg"
+                alt="Apple iMak"
+                width="360"
+              />
             </li>
             <li class="case-item">
               <img
+                srcset="./images/img-2.jpg 1x, ./images/img-2@2x.jpg 2x"
+                src="./images/img-2.jpg"
+                alt="Apple iphone"
+                width="360"
+              />
+            </li>
+            <li class="case-item">
+              <img
+                srcset="./images/img-3.jpg 1x, ./images/img-3@2x.jpg 2x"
                 src="./images/img-3.jpg"
                 alt="iphone and notebook"
                 width="360"
@@ -211,6 +298,7 @@
             <li class="team-item">
               <img
                 class="team-item-img"
+                srcset="./images/photo-1.jpg 1x, ./images/photo-1@2x.jpg 2x"
                 src="./images/photo-1.jpg"
                 alt="Mark Guerrero"
                 width="264"
@@ -251,6 +339,7 @@
             <li class="team-item">
               <img
                 class="team-item-img"
+                srcset="./images/photo-2.jpg 1x, ./images/photo-2@2x.jpg 2x"
                 src="./images/photo-2.jpg"
                 alt="Tom Ford"
                 width="264"
@@ -291,6 +380,7 @@
             <li class="team-item">
               <img
                 class="team-item-img"
+                srcset="./images/photo-3.jpg 1x, ./images/photo-3@2x.jpg 2x"
                 src="./images/photo-3.jpg"
                 alt="Camila Garcia"
                 width="264"
@@ -331,6 +421,7 @@
             <li class="team-item">
               <img
                 class="team-item-img"
+                srcset="./images/photo-4.jpg 1x, ./images/photo-4@2x.jpg 2x"
                 src="./images/photo-4.jpg"
                 alt="Daniel Wilson"
                 width="264"
@@ -488,6 +579,13 @@
         </div>
       </div>
     </footer>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
+      integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/mobile-menu.js"></script>
     <script src="./js/modal.js"></script>
   </body>
 </html>

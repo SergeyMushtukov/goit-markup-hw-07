@@ -1,13 +1,166 @@
-@media screen and (min-width: 1200x) {
-    .container {
-      width: 1158px;
-      padding-left: 15px;
-      padding-right: 15px;
-    }
+@media screen and (min-width: 1200px) {
+  .section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
 
-/* --------HEADER-------- */
+  .container {
+    width: 1158px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 
+  /* --------HEADER-------- */
 
+  .header-logo {
+    margin-right: 76px;
+  }
+
+  .address-list {
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  .header-mail,
+  .header-tel {
+    font-size: 16px;
+    line-height: calc(24 / 16);
+    letter-spacing: 0.02em;
+  }
+
+  /* --------HERO-------- */
+
+  .hero {
+    padding-top: 188px;
+    padding-bottom: 188px;
+  }
+
+  .hero-title {
+    margin-bottom: 48px;
+  }
+
+  /* --------MODAL-------- */
+
+  .form-input {
+    padding-left: 38px;
+  }
+
+  .textarea-label {
+    margin-bottom: 16px;
+  }
+
+  /* --------OUR ADVANTAGES-------- */
+
+  .benefits-list {
+    flex-wrap: nowrap;
+    gap: 24px;
+  }
+
+  .benefits-item {
+    flex-basis: calc((100% - 3 * 24px) / 4);
+  }
+
+  .benefits-thumb {
+    display: block;
+    height: 112px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    margin-bottom: 8px;
+    background: #f4f4fd;
+    border-radius: 4px;
+  }
+
+  .benefits-icon {
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .benefits-title {
+    font-size: 20px;
+    line-height: calc(24 / 20);
+  }
+
+  .benefits-item-text {
+    font-weight: 400;
+  }
+
+/* --------WHAT ARE WE DOING-------- */
+
+.case {
+    display: block;
+  }
+
+  .case.section {
+    padding-top: 0;
+  }
+
+  .case-title {
+    margin-bottom: 72px;
+  
+    font-size: 36px;
+    line-height: calc(40 /36);
+    text-align: center;
+    text-transform: capitalize;
+    color: var(--title-text-color);
+  }
+  
+  .case-list {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* --------OUR TEAM-------- */
+
+  .team .container {
+    width: calc(1128px + 2 * 15px);
+    /* outline: 2px solid tomato; */
+  }
+
+  /* --------Customers-------- */
+
+  .customer-item {
+    width: calc((100% - 5 * 24px) / 6);
+  }
+
+  /* --------FOOTER-------- */
+
+  .footer {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  .footer-base {
+    gap: 120px;
+  }
+
+  .footer-container {
+    display: flex;
+    gap: 80px;
+  }
+
+/* --------FOOTER-FORM-------- */
+
+.form-footer-container {
+    margin-top: 0;
+  }
+
+  /* -------------PORTFOLIO PAGE------------- */
+
+  .examples.section {
+    padding-top: 100px;
+    padding-bottom: 120px;
+  }
+
+  .examples-btn-list {
+    margin-bottom: 72px;
+  }
+
+  .examples-list {
+    row-gap: 40px;
+    column-gap: 24px;
+  }
 
 }
-    

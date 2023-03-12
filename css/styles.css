@@ -38,7 +38,6 @@ ul {
 }
 
 .container {
-  width: 100%;
   padding-left: 16px;
   padding-right: 16px;
   margin-left: auto;
@@ -76,6 +75,12 @@ img {
   background-color: #ffffff;
 }
 
+.header-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .logo {
   font-family: 'Raleway';
   font-weight: 800;
@@ -107,10 +112,147 @@ img {
   display: none;
 }
 
+.menu-toggle {
+  display: inline-flex;
+  padding: 0;
+  border: none;
+
+  background-color: transparent;
+  cursor: pointer;
+  color: #2e2f42;
+}
+
+.open-menu-icon {
+  stroke: currentColor;
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus {
+  color: var(--hover-bg-color);
+}
+/* --------MOBILE-MENU-------- */
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 80px 35px 40px 40px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background: #ffffff;
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+  z-index: 3;
+
+  transform: translateX(-100%);
+  transition: transform var(--time) var(--timing-function);
+}
+
+.mobile-menu.is-open {
+  transform: translateX(0);
+}
+
+.mobile-menu .mobile-menu-btn {
+  background-color: rgba(231, 233, 252, 0.1);
+  border-color: rgba(46, 47, 66, 0.1);
+}
+
+.mobile-menu-btn:hover,
+.mobile-menu-btn:focus {
+  color: #ffffff;
+  background-color: var(--hover-bg-color);
+  border-color: transparent;
+}
+
+.close-menu-icon {
+  fill: currentColor;
+}
+
+.mobile-item {
+  margin-bottom: 40px;
+}
+
+.mobile-link {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: calc(40 / 36);
+  color: var(--title-text-color);
+  transition: color var(--time) var(--timing-function);
+}
+
+.mobile-link:hover,
+.mobile-link:focus {
+  color: var(--hover-bg-color);
+}
+
+.mobile-link.active {
+  color: var(--hover-bg-color);
+}
+
+.mobile-address-item {
+  margin-top: 40px;
+}
+
+.mobile-tel,
+.mobile-mail {
+  display: block;
+  font-style: normal;
+  transition: color var(--time) var(--timing-function);
+}
+.mobile-tel {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: calc(40 / 36);
+  color: var(--accent-color);
+}
+
+.mobile-mail {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: calc(24 / 20);
+  color: inherit;
+}
+
+.mobile-mail:hover,
+.mobile-mail:focus,
+.mobile-tel:hover,
+.mobile-tel:focus {
+  color: var(--hover-bg-color);
+}
+
+.mobile-soc-list {
+  display: flex;
+  gap: 28px;
+  margin-top: 48px;
+}
+
+.mobile-soc-link {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--accent-color);
+  border-radius: 50%;
+
+  transition: background-color var(--time) var(--timing-function);
+}
+
+.mobile-soc-link:hover,
+.mobile-soc-link:focus {
+  background-color: var(--hover-bg-color);
+}
+
 /* --------HERO-------- */
 
 .overlay {
-  width: 100%;
+  max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
 
@@ -118,11 +260,24 @@ img {
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url('../images/people-office.jpg');
+    url('../images/people-office-mobile.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-color: #2e2f42;
+}
+
+@media (min-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .overlay {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url('../images/people-office-mobile@2x.jpg');
+  }
 }
 
 .hero {
@@ -175,21 +330,29 @@ img {
   opacity: 1;
   visibility: visible;
 
+  padding-top: 96px;
+  padding-left: 18px;
+  padding-right: 18px;
+
+  overflow-y: scroll;
+
   transition: opacity var(--time) var(--timing-function),
     visibility var(--time) var(--timing-function);
 }
 
+.backdrop.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .modal {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) scale(1);
+  position: relative;
 
   padding-top: 72px;
   padding-right: 16px;
   padding-bottom: 24px;
   padding-left: 16px;
-  width: calc(100% - 2 * 18px);
 
   border-radius: 4px;
 
@@ -197,11 +360,10 @@ img {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   opacity: 1;
-
-  transition: transform var(--time) var(--timing-function);
 }
 
-.modal-btn {
+.modal-btn,
+.mobile-menu-btn {
   position: absolute;
   top: 24px;
   right: 24px;
@@ -387,20 +549,7 @@ img {
   margin-right: auto;
 }
 
-.backdrop.is-hidden {
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.backdrop.is-hidden .modal {
-  transform: translate(-50%, -50%) scale(1.1);
-}
-
 /* --------OUR ADVANTAGES-------- */
-
-.benefits-list {
-}
 
 .benefits-item:not(:last-child) {
   margin-bottom: 72px;
@@ -557,7 +706,8 @@ img {
 /* --------FOOTER-------- */
 
 .footer {
-  padding: 96px 0;
+  padding-top: 96px;
+  padding-bottom: 96px;
 
   background-color: var(--title-text-color);
 }
@@ -695,17 +845,16 @@ img {
 /* -------------PORTFOLIO PAGE------------- */
 
 .examples.section {
-  padding-top: 96px;
+  padding-top: 48px;
+  padding-bottom: 48px;
 }
 
 .examples-btn-list {
   display: flex;
-  justify-content: center;
-  margin-bottom: 72px;
-}
-
-.examples-btn-item:not(:last-child) {
-  margin-right: 24px;
+  flex-wrap: wrap;
+  column-gap: 24px;
+  row-gap: 16px;
+  margin-bottom: 48px;
 }
 
 .examples-btn {
@@ -747,8 +896,6 @@ img {
 }
 
 .examples-link {
-  display: block;
-  flex-basis: calc((100% - 48px) / 3);
 
   background-color: #ffffff;
 
@@ -779,6 +926,11 @@ img {
 .examples-thumb {
   position: relative;
   overflow: hidden;
+}
+
+.examples-thumb img {
+  max-width: 100%;
+  height: auto;
 }
 
 .examples-overlay {
